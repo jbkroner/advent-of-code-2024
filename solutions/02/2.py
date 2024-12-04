@@ -11,7 +11,6 @@ with open(input, mode="r") as f:
     ]
 
 num_valid = 0
-# diff_range = (1, 2, 3)
 for report in reports:
     all_increasing = True
     all_decreasing = True
@@ -24,10 +23,8 @@ for report in reports:
 
         all_increasing = all_increasing and (prev < curr)
 
-        # check the difference
         all_diff_ok = all_diff_ok and (1 <= abs(prev - curr) <= 3)
 
-    # check for safe
     safe = (all_increasing ^ all_decreasing) and all_diff_ok
 
     if safe:
